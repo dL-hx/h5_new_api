@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="username"> <br /><br />
+	<button id="setData">设置数据</button>
+	<button id="getData">获取数据</button>
+	<button id="delData">删除数据</button>
+	<script>
+        var username = document.querySelector("#username");
+        // 点击按钮存取数据 
+        	window.sessionStorage.setItem("age", 18);
+        	window.sessionStorage.setItem("address", "北京");
+        // 
+        document.querySelector("#setData").onclick = function() {
+        	// 点击之后得到 username 里面值
+        	 var val = username.value;  
+        	 // 存储数据
+        	 // window.sessionStorage.setItem(key, value) 设置存储内容
+        	 window.sessionStorage.setItem("username", val);
+        }
+
+            // 点击按钮获得数据 
+        document.querySelector("#getData").onclick = function() {
+        
+        	 // 获得数据
+        	 // window.sessionStorage.getItem(key) 读取存储内容
+        	alert(window.sessionStorage.getItem("username")) ;
+        }
+
+             3. // 删除数据 
+            document.querySelector("#delData").onclick = function() {
+        
+        	 // 获得数据
+        	 // window.sessionStorage.removeItem(key) 删除键值为key的存储内容
+            // window.sessionStorage.removeItem("username");
+            // 删除所有的 数据 
+            window.sessionStorage.clear();
+
+  
+        }
+
+
+	</script>
+</body>
+</html>
